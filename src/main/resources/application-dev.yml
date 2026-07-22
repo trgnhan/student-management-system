@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active:
+      on-profile: dev
+  devtools:
+    add-properties: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+openapi:
+  service:
+    title: Management student system
+    version: v1.0.0
+    server: http://localhost:${server.port}
